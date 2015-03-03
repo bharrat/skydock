@@ -110,7 +110,7 @@ Now that skydns is running we can start skydock to bridge the gap between docker
 
 ```bash
 docker pull crosbymichael/skydock
-docker run -d -v /var/run/docker.sock:/docker.sock --name skydock crosbymichael/skydock -ttl 30 -environment dev -s /docker.sock -domain docker -name skydns
+docker run -d -v /var/run/docker.sock:/docker.sock --name skydock --link skydns:skydns crosbymichael/skydock -ttl 30 -environment dev -s /docker.sock -domain docker -name skydns
 ```
 
 
